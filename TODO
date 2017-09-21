@@ -1,0 +1,12 @@
+- create some kind of user groups and group ACLs so we can restrict access to certain routes and graphql queries/mutations
+- create basic conversations according to the concept
+- add simple webinterface using apollo
+- add simple admin interface
+  -> find out how we can revoke JWTs
+     -> possibly just compare the issuing timestamp with some "not issued before" database entry
+- think about streaming/pushing new messages etc to users
+  -> graphql websocket
+  -> notification websocket
+  -> google/apple notification dingsbums
+  -> polling
+- documentation

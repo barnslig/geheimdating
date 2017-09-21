@@ -1,0 +1,30 @@
+{
+  "scripts": {
+    "build": "rm -rf dist/; cross-env NODE_ENV=production babel --copy-files --out-dir dist/ src",
+    "start": "cross-env NODE_ENV=production node dist/index.js",
+    "start:dev": "nodemon -w src -x babel-node src/index.js"
+  },
+  "dependencies": {
+    "bcrypt": "^1.0.3",
+    "cross-env": "^5.0.5",
+    "express": "^4.15.4",
+    "express-graphql": "^0.6.7",
+    "graphql": "^0.10.5",
+    "jsonwebtoken": "^7.4.3",
+    "passport": "^0.4.0",
+    "passport-anonymous": "^1.0.1",
+    "passport-http-bearer": "^1.0.1",
+    "sequelize": "^4.8.0",
+    "sqlite3": "^3.1.9",
+    "umzug": "^2.0.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.6.0",
+    "eslint": "^4.5.0",
+    "eslint-config-airbnb-base": "^11.3.2",
+    "eslint-plugin-import": "^2.7.0",
+    "nodemon": "^1.11.0"
+  }
+}
