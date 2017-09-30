@@ -8,14 +8,24 @@ import bcrypt from 'bcrypt';
  *
  * @param {Database} db - Database instance
  */
-export default db => (
+export default (db) => {
   db.User.findOrCreate({
     where: {
-      username: 'testuser',
+      username: 'john',
     },
     defaults: {
-      username: 'testuser',
+      username: 'john',
       password: bcrypt.hashSync('testpassword', 10),
     },
-  })
-);
+  });
+
+  db.User.findOrCreate({
+    where: {
+      username: 'jane',
+    },
+    defaults: {
+      username: 'jane',
+      password: bcrypt.hashSync('passwordtest', 10),
+    },
+  });
+};

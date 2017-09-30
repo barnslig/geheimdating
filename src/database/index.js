@@ -40,6 +40,12 @@ class Database {
 
     // load models
     this.User = this.sequelize.import(path.join(__dirname, 'models/user'));
+    this.Conversation = this.sequelize.import(path.join(__dirname, 'models/conversation'));
+    this.ConversationUser = this.sequelize.import(path.join(__dirname, 'models/conversation_user'));
+
+    // setup associations
+    this.User.belongsToMany(this.Conversation, { through: this.ConversationUser });
+    this.Conversation.belongsToMany(this.User, { through: this.ConversationUser });
   }
 
   /**
